@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "https://contact-management-system-production-1578.up.railway.app/";
+const BASE_URL =
+    "https://contact-management-system-production-1578.up.railway.app/contacts";
 
 export const saveContact = (contact) => {
     return axios.post(BASE_URL, contact);

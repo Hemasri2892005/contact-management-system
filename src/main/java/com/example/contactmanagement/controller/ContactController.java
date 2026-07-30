@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
 @RequestMapping("/contacts")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://cooperative-cat-production-6688.up.railway.app"
+})
 public class ContactController {
 
     @Autowired
@@ -33,14 +36,11 @@ public class ContactController {
     @PutMapping("/{id}")
     public Contact updateContact(@PathVariable int id,
                                  @RequestBody Contact contact) {
-
         return service.updateContact(id, contact);
     }
 
     @DeleteMapping("/{id}")
     public String deleteContact(@PathVariable int id) {
-
         return service.deleteContact(id);
     }
-
 }
