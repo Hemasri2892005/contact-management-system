@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:9090/contacts";
+const BASE_URL = "https://contact-management-system-production-1578.up.railway.app/";
 
 export const saveContact = (contact) => {
     return axios.post(BASE_URL, contact);
